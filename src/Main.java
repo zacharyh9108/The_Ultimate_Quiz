@@ -49,7 +49,6 @@ public class Main {
             else if (userQuiz.equalsIgnoreCase("basketball"))
             {
                 exitLoop = true;
-                Basketball.getBBallQuestions();
                 Basketball.askBBallQuestions();
 
             }
