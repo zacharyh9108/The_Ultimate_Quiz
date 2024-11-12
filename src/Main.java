@@ -28,17 +28,17 @@ public class Main {
                     if (difficulty.equalsIgnoreCase("easy"))
                     {
                         exitLoop = true;
-                        System.out.println("ah");
+                        System.out.println("easy");
                     }
                     else if (difficulty.equalsIgnoreCase("medium"))
                     {
                         exitLoop = true;
-                        System.out.println("ahh");
+                        System.out.println("medium");
                     }
                     else if (difficulty.equalsIgnoreCase("hard"))
                     {
                         exitLoop = true;
-                        System.out.println("ahhh");
+                        System.out.println("hard");
                     }
                     else
                     {
@@ -49,28 +49,29 @@ public class Main {
             else if (userQuiz.equalsIgnoreCase("basketball"))
             {
                 exitLoop = true;
-                Basketball.askBBallQuestions();
+                Questions.askBBall();
 
             }
             else if (userQuiz.equalsIgnoreCase("soccer"))
             {
                 exitLoop = true;
-                System.out.println("ehh");
+                Questions.askSoccer();
             }
             else if (userQuiz.equalsIgnoreCase("dogs"))
             {
                 exitLoop = true;
-                System.out.println("ehhh");
+                Questions.askDog();
             }
             else if (userQuiz.equalsIgnoreCase("cats"))
             {
                 exitLoop = true;
-                System.out.println("ehhhh");
+                Questions.askCat();
             }
             else
             {
                 System.out.println("That's not a quiz, try again\n");
             }
         }
+        System.out.println("Your final score was: " + Questions.countScore() + " / " + Questions.countTotalAnswers());
     }
 }
