@@ -8,6 +8,9 @@ public class Questions {
     private static final ArrayList<String> soccerQuestions = getFileData("src/SoccerQuestions");
     private static final ArrayList<String> catQuestions = getFileData("src/CatQuestions");
     private static final ArrayList<String> dogQuestions = getFileData("src/DogQuestions");
+    private static final ArrayList<String> easyRiddles = getFileData("src/EasyRiddles");
+    private static final ArrayList<String> medRiddles = getFileData("src/MediumRiddles");
+    private static final ArrayList<String> hardRiddles = getFileData("src/HardRiddles");
     private static int score;
     private static int totalAnswers;
 
@@ -34,12 +37,17 @@ public class Questions {
     }
 
     public static void askBBall() {
-        Scanner y = new Scanner(System.in);
-        for (int i = 0; i < bBallQuestions.size(); i = i + 2)
+        Scanner s = new Scanner(System.in);
+        int random = 0;
+        for (int i = 0; i < 5; i++)
         {
-            System.out.print(Questions.bBallQuestions.get(i));
-            String userAnswer = y.nextLine();
-            if (userAnswer.equals(Questions.bBallQuestions.get(i + 1)))
+            do {
+                random = (int)(Math.random() * bBallQuestions.size());
+            }
+            while (random % 2 != 0);
+            System.out.println(Questions.bBallQuestions.get(random));
+            String userAnswer = s.nextLine();
+            if (userAnswer.equals(Questions.bBallQuestions.get(random + 1)))
             {
                 Questions.countTotalAnswers();
                 Questions.countScore();
@@ -54,12 +62,17 @@ public class Questions {
     }
 
     public static void askSoccer() {
-        Scanner y = new Scanner(System.in);
-        for (int i = 0; i < soccerQuestions.size(); i = i + 2)
+        Scanner s = new Scanner(System.in);
+        int random = 0;
+        for (int i = 0; i < 5; i++)
         {
-            System.out.print(Questions.soccerQuestions.get(i));
-            String userAnswer = y.nextLine();
-            if (userAnswer.equals(Questions.soccerQuestions.get(i + 1)))
+            do {
+                random = (int)(Math.random() * soccerQuestions.size());
+            }
+            while (random % 2 != 0);
+            System.out.println(Questions.soccerQuestions.get(random));
+            String userAnswer = s.nextLine();
+            if (userAnswer.equals(Questions.soccerQuestions.get(random + 1)))
             {
                 Questions.countTotalAnswers();
                 Questions.countScore();
@@ -74,12 +87,17 @@ public class Questions {
     }
 
     public static void askDog() {
-        Scanner y = new Scanner(System.in);
-        for (int i = 0; i < dogQuestions.size(); i = i + 2)
+        Scanner s = new Scanner(System.in);
+        int random = 0;
+        for (int i = 0; i < 5; i++)
         {
-            System.out.print(Questions.dogQuestions.get(i));
-            String userAnswer = y.nextLine();
-            if (userAnswer.equals(Questions.dogQuestions.get(i + 1)))
+            do {
+                random = (int)(Math.random() * dogQuestions.size());
+            }
+            while (random % 2 != 0);
+            System.out.println(Questions.dogQuestions.get(random));
+            String userAnswer = s.nextLine();
+            if (userAnswer.equals(Questions.dogQuestions.get(random + 1)))
             {
                 Questions.countTotalAnswers();
                 Questions.countScore();
@@ -94,12 +112,88 @@ public class Questions {
     }
 
     public static void askCat() {
-        Scanner y = new Scanner(System.in);
-        for (int i = 0; i < catQuestions.size(); i = i + 2)
+        Scanner s = new Scanner(System.in);
+        int random = 0;
+        for (int i = 0; i < 5; i++)
         {
-            System.out.print(Questions.catQuestions.get(i));
-            String userAnswer = y.nextLine();
-            if (userAnswer.equals(Questions.catQuestions.get(i + 1)))
+            do {
+                random = (int)(Math.random() * catQuestions.size());
+            }
+            while (random % 2 != 0);
+            System.out.println(Questions.catQuestions.get(random));
+            String userAnswer = s.nextLine();
+            if (userAnswer.equals(Questions.catQuestions.get(random + 1)))
+            {
+                Questions.countTotalAnswers();
+                Questions.countScore();
+                System.out.println("You got it correct\n");
+            }
+            else
+            {
+                Questions.countTotalAnswers();
+                System.out.println("You got it wrong\n");
+            }
+        }
+    }
+
+    public static void askEasy() {
+        Scanner s = new Scanner(System.in);
+        int random = 0;
+        for (int i = 0; i < 5; i++) {
+            do {
+                random = (int)(Math.random() * easyRiddles.size());
+            }
+            while (random % 2 != 0);
+            System.out.println(Questions.easyRiddles.get(random));
+            String userAnswer = s.nextLine();
+            if (userAnswer.equals(Questions.easyRiddles.get(random + 1)))
+            {
+                Questions.countTotalAnswers();
+                Questions.countScore();
+                System.out.println("You got it correct\n");
+            }
+            else
+            {
+                Questions.countTotalAnswers();
+                System.out.println("You got it wrong\n");
+            }
+        }
+    }
+
+    public static void askMed() {
+        Scanner s = new Scanner(System.in);
+        int random = 0;
+        for (int i = 0; i < 5; i++) {
+            do {
+                random = (int)(Math.random() * medRiddles.size());
+            }
+            while (random % 2 != 0);
+            System.out.println(Questions.medRiddles.get(random));
+            String userAnswer = s.nextLine();
+            if (userAnswer.equals(Questions.medRiddles.get(random + 1)))
+            {
+                Questions.countTotalAnswers();
+                Questions.countScore();
+                System.out.println("You got it correct\n");
+            }
+            else
+            {
+                Questions.countTotalAnswers();
+                System.out.println("You got it wrong\n");
+            }
+        }
+    }
+    public static void askHard() {
+        Scanner s = new Scanner(System.in);
+        int random = 0;
+        for (int i = 0; i < 5; i++) {
+            do {
+                random = (int)(Math.random() * hardRiddles.size());
+            }
+            while (random % 2 != 0);
+            System.out.println(Questions.hardRiddles.get(random));
+            String userAnswer = s.nextLine();
+            if (userAnswer.equals(Questions.hardRiddles.get(random + 1)))
             {
                 Questions.countTotalAnswers();
                 Questions.countScore();
@@ -114,11 +208,14 @@ public class Questions {
     }
 
     public static int countScore() {
-        return score++;
+        score++;
+        return score;
     }
 
+
     public static int countTotalAnswers() {
-        return totalAnswers++;
+        totalAnswers++;
+        return totalAnswers;
     }
 
     public static void visualizeArray()

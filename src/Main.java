@@ -1,7 +1,6 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        boolean exitLoop = false;
 
         System.out.println("Welcome to the Ultimate Quiz!\n");
         System.out.println("The Ultimate Quiz Topics!");
@@ -13,65 +12,60 @@ public class Main {
         System.out.println("- Riddles");
         System.out.println("--------------------");
 
-        while (!exitLoop) {
+        String userQuiz;
+        do {
+            boolean exitLoop = false;
             Scanner s = new Scanner(System.in);
-            System.out.print("Which quiz would you like to complete?: ");
-            String userQuiz = s.nextLine();
-
+            System.out.print("Which quiz would you like to complete?(-1 to exit): ");
+            userQuiz = s.nextLine();
             if (userQuiz.equalsIgnoreCase("riddles")) {
-                while (!exitLoop)
-                {
+                while (!exitLoop) {
                     Scanner x = new Scanner(System.in);
                     System.out.print("Easy/Medium/Hard?: ");
                     String difficulty = x.nextLine();
 
-                    if (difficulty.equalsIgnoreCase("easy"))
-                    {
+                    if (difficulty.equalsIgnoreCase("easy")) {
                         exitLoop = true;
-                        System.out.println("easy");
-                    }
-                    else if (difficulty.equalsIgnoreCase("medium"))
-                    {
+                        Questions.askEasy();
+                    } else if (difficulty.equalsIgnoreCase("medium")) {
                         exitLoop = true;
-                        System.out.println("medium");
-                    }
-                    else if (difficulty.equalsIgnoreCase("hard"))
-                    {
+                        Questions.askMed();
+                    } else if (difficulty.equalsIgnoreCase("hard")) {
                         exitLoop = true;
-                        System.out.println("hard");
-                    }
-                    else
-                    {
+                        Questions.askHard();
+                    } else {
                         System.out.println("That's not a difficulty, try again\n");
                     }
                 }
-            }
-            else if (userQuiz.equalsIgnoreCase("basketball"))
-            {
+            } else if (userQuiz.equalsIgnoreCase("basketball")) {
                 exitLoop = true;
                 Questions.askBBall();
 
-            }
-            else if (userQuiz.equalsIgnoreCase("soccer"))
-            {
+            } else if (userQuiz.equalsIgnoreCase("soccer")) {
                 exitLoop = true;
                 Questions.askSoccer();
-            }
-            else if (userQuiz.equalsIgnoreCase("dogs"))
-            {
+            } else if (userQuiz.equalsIgnoreCase("dogs")) {
                 exitLoop = true;
                 Questions.askDog();
-            }
-            else if (userQuiz.equalsIgnoreCase("cats"))
-            {
+            } else if (userQuiz.equalsIgnoreCase("cats")) {
                 exitLoop = true;
                 Questions.askCat();
-            }
-            else
-            {
+            } else if (!userQuiz.equals("-1")){
                 System.out.println("That's not a quiz, try again\n");
             }
         }
-        System.out.println("Your final score was: " + Questions.countScore() + " / " + Questions.countTotalAnswers());
+        while (!userQuiz.equals("-1"));
+        if (Questions.countTotalAnswers() == 0) {
+            System.out.println("You did not do any quizzes");
+        }
+        else if(Questions.countScore() == 0 && Questions.countTotalAnswers() > 0) {
+            System.out.println("You got a zero\nDo your homework next time");
+        }
+        else if(Questions.countScore() == Questions.countTotalAnswers()) {
+            System.out.println("You did perfect!");
+        }
+        else {
+            System.out.println("Your final score was: " + Questions.countScore() + " / " + Questions.countTotalAnswers());
+        }
     }
 }
