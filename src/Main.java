@@ -55,17 +55,18 @@ public class Main {
             }
         }
         while (!userQuiz.equals("-1"));
-        if (Questions.countTotalAnswers() == 0) {
+        if (Questions.getTotalAnswers() == 0) {
             System.out.println("You did not do any quizzes");
         }
-        else if(Questions.countScore() == 0 && Questions.countTotalAnswers() > 0) {
+        else if(Questions.getScore() == 0 && Questions.getTotalAnswers() > 0) {
             System.out.println("You got a zero\nDo your homework next time");
         }
-        else if(Questions.countScore() == Questions.countTotalAnswers()) {
+        else if(Questions.getScore() == Questions.getTotalAnswers()) {
             System.out.println("You did perfect!");
+            System.out.println("Your final score was: " + Questions.getScore() + " / " + Questions.getTotalAnswers());
         }
         else {
-            System.out.println("Your final score was: " + Questions.countScore() + " / " + Questions.countTotalAnswers());
+            System.out.println("Your final score was: " + Questions.getScore() + " / " + Questions.getTotalAnswers());
         }
     }
 }
