@@ -11,6 +11,7 @@ public class Questions {
     private static final ArrayList<String> easyRiddles = getFileData("src/EasyRiddles");
     private static final ArrayList<String> medRiddles = getFileData("src/MediumRiddles");
     private static final ArrayList<String> hardRiddles = getFileData("src/HardRiddles");
+    private static final ArrayList<String> funFacts = getFileData("src/FunFacts");
     private static int score;
     private static int totalAnswers;
 
@@ -211,6 +212,30 @@ public class Questions {
             System.out.println(Questions.hardRiddles.get(random));
             String userAnswer = s.nextLine();
             if (userAnswer.equalsIgnoreCase(Questions.hardRiddles.get(random + 1)))
+            {
+                Questions.addTotalAnswers();
+                Questions.addScore();
+                System.out.println("You got it correct\n");
+            }
+            else
+            {
+                Questions.addTotalAnswers();
+                System.out.println("You got it wrong\n");
+            }
+        }
+    }
+
+    public static void askFunFacts() {
+        Scanner s = new Scanner(System.in);
+        int random = 0;
+        for (int i = 0; i < 5; i++) {
+            do {
+                random = (int)(Math.random() * funFacts.size());
+            }
+            while (random % 2 != 0);
+            System.out.println(Questions.funFacts.get(random));
+            String userAnswer = s.nextLine();
+            if (userAnswer.equalsIgnoreCase(Questions.funFacts.get(random + 1)))
             {
                 Questions.addTotalAnswers();
                 Questions.addScore();

@@ -10,6 +10,7 @@ public class Main {
         System.out.println("- Soccer");
         System.out.println("- Basketball");
         System.out.println("- Riddles");
+        System.out.println("- Fun Facts");
         System.out.println("--------------------");
 
         String userQuiz;
@@ -50,7 +51,11 @@ public class Main {
             } else if (userQuiz.equalsIgnoreCase("cats")) {
                 exitLoop = true;
                 Questions.askCat();
-            } else if (!userQuiz.equals("-1")){
+            }
+            else if (userQuiz.equalsIgnoreCase("fun facts")) {
+                exitLoop = true;
+                Questions.askFunFacts();
+            }else if (!userQuiz.equals("-1")){
                 System.out.println("That's not a quiz, try again\n");
             }
         }
