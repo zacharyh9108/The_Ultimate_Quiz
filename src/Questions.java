@@ -38,93 +38,132 @@ public class Questions {
     }
 
     public static void askBBall() {
+        ArrayList<String> newQuestions = bBallQuestions;
         Scanner s = new Scanner(System.in);
         int random = 0;
         for (int i = 0; i < 5; i++)
         {
             do {
-                random = (int)(Math.random() * bBallQuestions.size());
+                random = (int)(Math.random() * newQuestions.size());
             }
             while (random % 2 != 0);
-            System.out.println(Questions.bBallQuestions.get(random));
+            System.out.println(newQuestions.get(random));
             String userAnswer = s.nextLine();
-            if (userAnswer.equalsIgnoreCase(Questions.bBallQuestions.get(random + 1)))
+            if (userAnswer.equalsIgnoreCase(newQuestions.get(random + 1)))
             {
-                Questions.addTotalAnswers();
-                Questions.addScore();
+                newQuestions.remove(random);
+                newQuestions.remove(random);
+                addTotalAnswers();
+                addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                Questions.addTotalAnswers();
+                addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }
     }
 
     public static void askSoccer() {
+        ArrayList<String> newQuestions = soccerQuestions;
         Scanner s = new Scanner(System.in);
         int random = 0;
         for (int i = 0; i < 5; i++)
         {
             do {
-                random = (int)(Math.random() * soccerQuestions.size());
+                random = (int)(Math.random() * newQuestions.size());
             }
             while (random % 2 != 0);
-            System.out.println(Questions.soccerQuestions.get(random));
+            System.out.println(newQuestions.get(random));
             String userAnswer = s.nextLine();
-            if (userAnswer.equalsIgnoreCase(Questions.soccerQuestions.get(random + 1)))
+            if (userAnswer.equalsIgnoreCase(newQuestions.get(random + 1)))
             {
-                Questions.addTotalAnswers();
-                Questions.addScore();
+                newQuestions.remove(random);
+                newQuestions.remove(random);
+                addTotalAnswers();
+                addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                Questions.addTotalAnswers();
+                addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }
     }
 
     public static void askDog() {
+        ArrayList<String> newQuestions = dogQuestions;
         Scanner s = new Scanner(System.in);
         int random = 0;
         for (int i = 0; i < 5; i++)
         {
             do {
-                random = (int)(Math.random() * dogQuestions.size());
+                random = (int)(Math.random() * newQuestions.size());
             }
             while (random % 2 != 0);
-            System.out.println(Questions.dogQuestions.get(random));
+            System.out.println(newQuestions.get(random));
             String userAnswer = s.nextLine();
-            if (userAnswer.equalsIgnoreCase(Questions.dogQuestions.get(random + 1)))
+            if (userAnswer.equalsIgnoreCase(newQuestions.get(random + 1)))
             {
-                Questions.addTotalAnswers();
-                Questions.addScore();
+                newQuestions.remove(random);
+                newQuestions.remove(random);
+                addTotalAnswers();
+                addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                Questions.addTotalAnswers();
+                addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }
     }
 
     public static void askCat() {
+        ArrayList<String> newQuestions = catQuestions;
         Scanner s = new Scanner(System.in);
         int random = 0;
         for (int i = 0; i < 5; i++)
         {
             do {
-                random = (int)(Math.random() * catQuestions.size());
+                random = (int)(Math.random() * newQuestions.size());
             }
             while (random % 2 != 0);
-            System.out.println(Questions.catQuestions.get(random));
+            System.out.println(newQuestions.get(random));
             String userAnswer = s.nextLine();
-            if (userAnswer.equalsIgnoreCase(Questions.catQuestions.get(random + 1)))
+            if (userAnswer.equalsIgnoreCase(newQuestions.get(random + 1)))
             {
+                newQuestions.remove(random);
+                newQuestions.remove(random);
+                addTotalAnswers();
+                addScore();
+                System.out.println("You got it correct\n");
+            }
+            else
+            {
+                addTotalAnswers();
+                System.out.println("You got it wrong\n");
+            }
+        }
+    }
+
+    public static void askEasy() {
+        ArrayList<String> newRiddles = easyRiddles;
+        Scanner s = new Scanner(System.in);
+        int random = 0;
+        for (int i = 0; i < 5; i++) {
+            do {
+                random = (int)(Math.random() * newRiddles.size());
+            }
+            while (random % 2 != 0);
+            System.out.println(newRiddles.get(random));
+            String userAnswer = s.nextLine();
+            if (userAnswer.equalsIgnoreCase(newRiddles.get(random + 1)))
+            {
+                newRiddles.remove(random);
+                newRiddles.remove(random);
                 Questions.addTotalAnswers();
                 Questions.addScore();
                 System.out.println("You got it correct\n");
@@ -137,8 +176,61 @@ public class Questions {
         }
     }
 
-    public static void askEasy() {
-        ArrayList<String> newQuestions = easyRiddles;
+    public static void askMed() {
+        ArrayList<String> newRiddles = medRiddles;
+        Scanner s = new Scanner(System.in);
+        int random = 0;
+        for (int i = 0; i < 5; i++) {
+            do {
+                random = (int)(Math.random() * newRiddles.size());
+            }
+            while (random % 2 != 0);
+            System.out.println(newRiddles.get(random));
+            String userAnswer = s.nextLine();
+            if (userAnswer.equalsIgnoreCase(newRiddles.get(random + 1)))
+            {
+                newRiddles.remove(random);
+                newRiddles.remove(random);
+                addTotalAnswers();
+                addScore();
+                System.out.println("You got it correct\n");
+            }
+            else
+            {
+                addTotalAnswers();
+                System.out.println("You got it wrong\n");
+            }
+        }
+    }
+    public static void askHard() {
+        ArrayList<String> newRiddles = hardRiddles;
+        Scanner s = new Scanner(System.in);
+        int random = 0;
+        for (int i = 0; i < 5; i++) {
+            do {
+                random = (int)(Math.random() * newRiddles.size());
+            }
+            while (random % 2 != 0);
+            System.out.println(newRiddles.get(random));
+            String userAnswer = s.nextLine();
+            if (userAnswer.equalsIgnoreCase(newRiddles.get(random + 1)))
+            {
+                newRiddles.remove(random);
+                newRiddles.remove(random);
+                addTotalAnswers();
+                addScore();
+                System.out.println("You got it correct\n");
+            }
+            else
+            {
+                addTotalAnswers();
+                System.out.println("You got it wrong\n");
+            }
+        }
+    }
+
+    public static void askFunFacts() {
+        ArrayList<String> newQuestions = funFacts;
         Scanner s = new Scanner(System.in);
         int random = 0;
         for (int i = 0; i < 5; i++) {
@@ -150,100 +242,15 @@ public class Questions {
             String userAnswer = s.nextLine();
             if (userAnswer.equalsIgnoreCase(newQuestions.get(random + 1)))
             {
-                for(int x = 0;x < newQuestions.size(); x++)
-                {
-                    if(newQuestions.get(x).equalsIgnoreCase(newQuestions.get(random)))
-                    {
-                        newQuestions.remove(newQuestions.get(x));
-                        newQuestions.remove(newQuestions.get(x + 1));
-                    }
-                }
-                Questions.addTotalAnswers();
-                Questions.addScore();
+                newQuestions.remove(random);
+                newQuestions.remove(random);
+                addTotalAnswers();
+                addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                for(int x = 0;x < newQuestions.size(); x++)
-                {
-                    if(newQuestions.get(x).equalsIgnoreCase(newQuestions.get(random)))
-                    {
-                        newQuestions.remove(newQuestions.get(x));
-                        newQuestions.remove(newQuestions.get(x + 1));
-                    }
-                }
-                Questions.addTotalAnswers();
-                System.out.println("You got it wrong\n");
-            }
-        }
-    }
-
-    public static void askMed() {
-        Scanner s = new Scanner(System.in);
-        int random = 0;
-        for (int i = 0; i < 5; i++) {
-            do {
-                random = (int)(Math.random() * medRiddles.size());
-            }
-            while (random % 2 != 0);
-            System.out.println(Questions.medRiddles.get(random));
-            String userAnswer = s.nextLine();
-            if (userAnswer.equalsIgnoreCase(Questions.medRiddles.get(random + 1)))
-            {
-                Questions.addTotalAnswers();
-                Questions.addScore();
-                System.out.println("You got it correct\n");
-            }
-            else
-            {
-                Questions.addTotalAnswers();
-                System.out.println("You got it wrong\n");
-            }
-        }
-    }
-    public static void askHard() {
-        Scanner s = new Scanner(System.in);
-        int random = 0;
-        for (int i = 0; i < 5; i++) {
-            do {
-                random = (int)(Math.random() * hardRiddles.size());
-            }
-            while (random % 2 != 0);
-            System.out.println(Questions.hardRiddles.get(random));
-            String userAnswer = s.nextLine();
-            if (userAnswer.equalsIgnoreCase(Questions.hardRiddles.get(random + 1)))
-            {
-                Questions.addTotalAnswers();
-                Questions.addScore();
-                System.out.println("You got it correct\n");
-            }
-            else
-            {
-                Questions.addTotalAnswers();
-                System.out.println("You got it wrong\n");
-            }
-        }
-    }
-
-    public static void askFunFacts() {
-        Scanner s = new Scanner(System.in);
-        int random = 0;
-        for (int i = 0; i < 5; i++) {
-            do {
-                random = (int)(Math.random() * funFacts.size());
-            }
-            while (random % 2 != 0);
-            System.out.println(Questions.funFacts.get(random));
-            String userAnswer = s.nextLine();
-            if (userAnswer.equalsIgnoreCase(Questions.funFacts.get(random + 1)))
-            {
-                Questions.addTotalAnswers();
-                Questions.addScore();
-                System.out.println("You got it correct\n");
-            }
-            else
-            {
-                Questions.addTotalAnswers();
+                addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }

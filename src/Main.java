@@ -60,18 +60,26 @@ public class Main {
             }
         }
         while (!userQuiz.equals("-1"));
+        double finalAnswer = Math.round((double)(Questions.getScore()) / (double)Questions.getTotalAnswers() * 100);
         if (Questions.getTotalAnswers() == 0) {
             System.out.println("You did not do any quizzes");
         }
         else if(Questions.getScore() == 0 && Questions.getTotalAnswers() > 0) {
-            System.out.println("You got a zero\nDo your homework next time");
+            System.out.println("You got a zero!\nDo your homework next time");
         }
         else if(Questions.getScore() == Questions.getTotalAnswers()) {
             System.out.println("You did perfect!");
             System.out.println("Your final score was: " + Questions.getScore() + " / " + Questions.getTotalAnswers());
+            System.out.println(finalAnswer + "% !!!!");
         }
         else {
             System.out.println("Your final score was: " + Questions.getScore() + " / " + Questions.getTotalAnswers());
+            if (finalAnswer >= 80) {
+                System.out.println("Good job!\nYou got: " + finalAnswer + "%");
+            }
+            else {
+                System.out.println("You got: " + finalAnswer + "%");
+            }
         }
     }
 }
