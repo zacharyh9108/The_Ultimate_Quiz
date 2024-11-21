@@ -12,8 +12,7 @@ public class Questions {
     private static final ArrayList<String> medRiddles = getFileData("src/MediumRiddles");
     private static final ArrayList<String> hardRiddles = getFileData("src/HardRiddles");
     private static final ArrayList<String> funFacts = getFileData("src/FunFacts");
-    private static int score;
-    private static int totalAnswers;
+
 
     public static ArrayList<String> getFileData(String fileName) {
         ArrayList<String> fileData = new ArrayList<String>();
@@ -40,7 +39,7 @@ public class Questions {
     public static void askBBall() {
         ArrayList<String> newQuestions = bBallQuestions;
         Scanner s = new Scanner(System.in);
-        int random = 0;
+        int random;
         for (int i = 0; i < 5; i++)
         {
             do {
@@ -53,13 +52,13 @@ public class Questions {
             {
                 newQuestions.remove(random);
                 newQuestions.remove(random);
-                addTotalAnswers();
-                addScore();
+                Player.addTotalAnswers();
+                Player.addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                addTotalAnswers();
+                Player.addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }
@@ -68,7 +67,7 @@ public class Questions {
     public static void askSoccer() {
         ArrayList<String> newQuestions = soccerQuestions;
         Scanner s = new Scanner(System.in);
-        int random = 0;
+        int random;
         for (int i = 0; i < 5; i++)
         {
             do {
@@ -81,13 +80,13 @@ public class Questions {
             {
                 newQuestions.remove(random);
                 newQuestions.remove(random);
-                addTotalAnswers();
-                addScore();
+                Player.addTotalAnswers();
+                Player.addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                addTotalAnswers();
+                Player.addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }
@@ -96,7 +95,7 @@ public class Questions {
     public static void askDog() {
         ArrayList<String> newQuestions = dogQuestions;
         Scanner s = new Scanner(System.in);
-        int random = 0;
+        int random;
         for (int i = 0; i < 5; i++)
         {
             do {
@@ -109,13 +108,13 @@ public class Questions {
             {
                 newQuestions.remove(random);
                 newQuestions.remove(random);
-                addTotalAnswers();
-                addScore();
+                Player.addTotalAnswers();
+                Player.addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                addTotalAnswers();
+                Player.addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }
@@ -124,7 +123,7 @@ public class Questions {
     public static void askCat() {
         ArrayList<String> newQuestions = catQuestions;
         Scanner s = new Scanner(System.in);
-        int random = 0;
+        int random;
         for (int i = 0; i < 5; i++)
         {
             do {
@@ -137,13 +136,13 @@ public class Questions {
             {
                 newQuestions.remove(random);
                 newQuestions.remove(random);
-                addTotalAnswers();
-                addScore();
+                Player.addTotalAnswers();
+                Player.addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                addTotalAnswers();
+                Player.addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }
@@ -152,7 +151,7 @@ public class Questions {
     public static void askEasy() {
         ArrayList<String> newRiddles = easyRiddles;
         Scanner s = new Scanner(System.in);
-        int random = 0;
+        int random;
         for (int i = 0; i < 5; i++) {
             do {
                 random = (int)(Math.random() * newRiddles.size());
@@ -164,13 +163,13 @@ public class Questions {
             {
                 newRiddles.remove(random);
                 newRiddles.remove(random);
-                Questions.addTotalAnswers();
-                Questions.addScore();
+                Player.addTotalAnswers();
+                Player.addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                Questions.addTotalAnswers();
+                Player.addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }
@@ -179,7 +178,7 @@ public class Questions {
     public static void askMed() {
         ArrayList<String> newRiddles = medRiddles;
         Scanner s = new Scanner(System.in);
-        int random = 0;
+        int random;
         for (int i = 0; i < 5; i++) {
             do {
                 random = (int)(Math.random() * newRiddles.size());
@@ -191,13 +190,13 @@ public class Questions {
             {
                 newRiddles.remove(random);
                 newRiddles.remove(random);
-                addTotalAnswers();
-                addScore();
+                Player.addTotalAnswers();
+                Player.addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                addTotalAnswers();
+                Player.addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }
@@ -205,7 +204,7 @@ public class Questions {
     public static void askHard() {
         ArrayList<String> newRiddles = hardRiddles;
         Scanner s = new Scanner(System.in);
-        int random = 0;
+        int random;
         for (int i = 0; i < 5; i++) {
             do {
                 random = (int)(Math.random() * newRiddles.size());
@@ -217,13 +216,13 @@ public class Questions {
             {
                 newRiddles.remove(random);
                 newRiddles.remove(random);
-                addTotalAnswers();
-                addScore();
+                Player.addTotalAnswers();
+                Player.addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                addTotalAnswers();
+                Player.addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }
@@ -232,7 +231,7 @@ public class Questions {
     public static void askFunFacts() {
         ArrayList<String> newQuestions = funFacts;
         Scanner s = new Scanner(System.in);
-        int random = 0;
+        int random;
         for (int i = 0; i < 5; i++) {
             do {
                 random = (int)(Math.random() * newQuestions.size());
@@ -244,33 +243,16 @@ public class Questions {
             {
                 newQuestions.remove(random);
                 newQuestions.remove(random);
-                addTotalAnswers();
-                addScore();
+                Player.addTotalAnswers();
+                Player.addScore();
                 System.out.println("You got it correct\n");
             }
             else
             {
-                addTotalAnswers();
+                Player.addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
         }
     }
-
-    public static void addScore() {
-        score++;
-    }
-
-    public static void addTotalAnswers() {
-        totalAnswers++;
-    }
-
-    public static int getScore() {
-        return score;
-    }
-
-    public static int getTotalAnswers() {
-        return totalAnswers;
-    }
-
 }
 
