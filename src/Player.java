@@ -31,16 +31,6 @@ public class Player {
         }
     }
 
-    public Player(String name, int score, int totalAnswers) {
-        Player.name = name;
-        Player.score = score;
-        Player.totalAnswers = totalAnswers;
-    }
-
-    public String toString() {
-        return "Player: " + name + ", Score: " + score;
-    }
-
     public static void addScore() {
         score++;
     }
@@ -65,7 +55,7 @@ public class Player {
         return Math.round((double)(Player.getScore()) / (double)Player.getTotalAnswers() * 100);
     }
 
-    public static String getScoreBoard() {
+    public static String getLeaderBoard() {
         String topScorer = null;
         double highestScore = -1.0;
         ArrayList<String> newScoreBoard = scoreBoard;

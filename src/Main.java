@@ -25,7 +25,7 @@ public class Main {
         while (!exitLoop);
 
         System.out.println("Leaderboard");
-        String topScorer = Player.getScoreBoard();
+        String topScorer = Player.getLeaderBoard();
         System.out.println("Top Scorer: " + topScorer);
         System.out.println();
 
