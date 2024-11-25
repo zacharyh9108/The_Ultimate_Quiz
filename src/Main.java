@@ -140,18 +140,25 @@ public class Main {
         }
     }
 
-    // Method to ask questions and review answers
+    /**
+     * The askQuestion method will print 5 questions from the given ArrayList and compare the user's answer to the correct answer
+     * from the given ArrayList.
+     * @param questions represents the questions and answers in a ArrayList the user chooses.
+     */
     public static void askQuestions(ArrayList<String> questions) {
         for (int i = 0; i < 10; i+=2) {
             String answer = questions.get(i + 1);
             Scanner s = new Scanner(System.in);
             System.out.print(questions.get(i));
             String userAnswer = s.nextLine();
-            if (userAnswer.toLowerCase().contains(answer)) {
+            if (userAnswer.toLowerCase().contains(answer))
+            {
                 Player.addScore();
                 Player.addTotalAnswers();
                 System.out.println("You got it correct!\n");
-            } else {
+            }
+            else
+            {
                 Player.addTotalAnswers();
                 System.out.println("You got it wrong\n");
             }
