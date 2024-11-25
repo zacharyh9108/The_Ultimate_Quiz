@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Player {
-    private static String name;
     private static int score;
     private static int totalAnswers;
     private static final ArrayList<String> scoreBoard = getFileData("src/scoreboard");
 
-    public static ArrayList<String> getFileData(String fileName) {
+    public static ArrayList<String> getFileData(String fileName)
+    {
         ArrayList<String> fileData = new ArrayList<String>();
         try
         {
@@ -52,20 +52,24 @@ public class Player {
     }
 
     public static double getTotalScorePct() {
-        return Math.round((double)(Player.getScore()) / (double)Player.getTotalAnswers() * 100);
+        return Math.round(((double) getScore() / getTotalAnswers()) * 100 * 100) / 100.0;
     }
 
     public static String getLeaderBoard() {
         String topScorer = null;
         double highestScore = -1.0;
         ArrayList<String> newScoreBoard = scoreBoard;
-        for (int i = 0; i < newScoreBoard.size(); i+=2) {
+
+        for (int i = 0; i < newScoreBoard.size(); i += 2)
+        {
             String name = newScoreBoard.get(i);
             String scoreString = newScoreBoard.get(i + 1);
             int correctAnswers = Integer.parseInt(scoreString.substring(0, scoreString.indexOf("/")));
             int totalAnswered = Integer.parseInt(scoreString.substring(scoreString.indexOf("/") + 1));
-            double score = Math.round((double) correctAnswers / totalAnswered * 100);
-            if (score > highestScore) {
+            double score = Math.round((double)correctAnswers / totalAnswered * 100);
+
+            if (score > highestScore)
+            {
                 highestScore = score;
                 topScorer = name + " with score " + score + "%";
             }
