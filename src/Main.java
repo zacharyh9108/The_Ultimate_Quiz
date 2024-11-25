@@ -2,10 +2,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-
         boolean exitLoop = false;
         String userName;
 
@@ -59,15 +59,15 @@ public class Main {
                     if (difficulty.equalsIgnoreCase("easy"))
                     {
                         exitLoop = true;
-                        Questions.askEasy();
+                        askQuestions(Questions.getEasy());
                     } else if (difficulty.equalsIgnoreCase("medium"))
                     {
                         exitLoop = true;
-                        Questions.askMed();
+                        askQuestions(Questions.getMed());
                     } else if (difficulty.equalsIgnoreCase("hard"))
                     {
                         exitLoop = true;
-                        Questions.askHard();
+                        askQuestions(Questions.getHard());
                     } else
                     {
                         System.out.println("That's not a difficulty, try again\n");
@@ -75,21 +75,21 @@ public class Main {
                 }
             } else if (userQuiz.equalsIgnoreCase("basketball"))
             {
-                Questions.askBBall();
+                askQuestions(Questions.getBBall());
 
             } else if (userQuiz.equalsIgnoreCase("soccer"))
             {
-                Questions.askSoccer();
+                askQuestions(Questions.getSoccer());
             } else if (userQuiz.equalsIgnoreCase("dogs"))
             {
-                Questions.askDog();
+                askQuestions(Questions.getDogs());
             } else if (userQuiz.equalsIgnoreCase("cats"))
             {
-                Questions.askCat();
+                askQuestions(Questions.getCats());
             }
             else if (userQuiz.equalsIgnoreCase("fun facts"))
             {
-                Questions.askFunFacts();
+                askQuestions(Questions.getFunFacts());
             }else if (!userQuiz.equals("-1"))
             {
                 System.out.println("That's not a quiz, try again\n");
@@ -102,21 +102,21 @@ public class Main {
 
         if (Player.getTotalAnswers() == 0)
         {
-            System.out.println("You did not do any quizzes");
+            System.out.println("\nYou did not do any quizzes");
         }
         else if(Player.getScore() == 0 && Player.getTotalAnswers() > 0)
         {
-            System.out.println("You got a zero!\nDo your homework next time");
+            System.out.println("\nYou got a zero!\nDo your homework next time... " + userName);
         }
         else if(Player.getScore() == Player.getTotalAnswers())
         {
-            System.out.println("You did perfect!");
+            System.out.println("\nYou did perfect " + userName + "!");
             System.out.println("Your final score was: " + score);
             System.out.println(finalAnswer + "% !!!!");
         }
         else
         {
-            System.out.println("Your final score was: " + score);
+            System.out.println("\nYour final score was: " + score);
             if (finalAnswer >= 80)
             {
                 System.out.println("Good job!\nYou got: " + finalAnswer + "%");
@@ -136,6 +136,24 @@ public class Main {
                 out.println(score);
             } catch (IOException e) {
                 //
+            }
+        }
+    }
+
+    // Method to ask questions and review answers
+    public static void askQuestions(ArrayList<String> questions) {
+        for (int i = 0; i < 10; i+=2) {
+            String answer = questions.get(i + 1);
+            Scanner s = new Scanner(System.in);
+            System.out.print(questions.get(i));
+            String userAnswer = s.nextLine();
+            if (userAnswer.toLowerCase().contains(answer)) {
+                Player.addScore();
+                Player.addTotalAnswers();
+                System.out.println("You got it correct!\n");
+            } else {
+                Player.addTotalAnswers();
+                System.out.println("You got it wrong\n");
             }
         }
     }
