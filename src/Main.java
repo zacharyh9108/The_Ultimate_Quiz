@@ -14,6 +14,7 @@ public class Main {
             Scanner y = new Scanner(System.in);
             System.out.print("Please enter your name: ");
             userName = y.nextLine();
+
             if (userName.length() > 10)
             {
                 System.out.println("Username too long!\n");
@@ -129,11 +130,13 @@ public class Main {
 
         if (Player.getScore() >= 15 && Player.getTotalAnswers() >= 15)
         {
+            // Create a `FileWriter` to write to the "src/Scoreboard" file.
+            // Wrapping it with `BufferedWriter` and `PrintWriter` for efficient writing and formatting.
             try (FileWriter fw = new FileWriter("src/Scoreboard", true);
                  BufferedWriter bw = new BufferedWriter(fw);
                  PrintWriter out = new PrintWriter(bw)) {
-                out.println(userName);
-                out.println(score);
+                out.println(userName); // Write the user's name to the file
+                out.println(score); // Write the user's score to the file
             } catch (IOException e) {
                 //
             }
