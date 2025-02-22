@@ -7,14 +7,14 @@ import java.util.ArrayList;
  * The Questions class represents the multiple ArrayList of different quiz topics.
  */
 public class Questions {
-    private static final ArrayList<String> bBallQuestions = getFileData("data/BBallQuestions");
-    private static final ArrayList<String> soccerQuestions = getFileData("data/SoccerQuestions");
-    private static final ArrayList<String> catQuestions = getFileData("data/CatQuestions");
-    private static final ArrayList<String> dogQuestions = getFileData("data/DogQuestions");
-    private static final ArrayList<String> easyRiddles = getFileData("data/EasyRiddles");
-    private static final ArrayList<String> medRiddles = getFileData("data/MediumRiddles");
-    private static final ArrayList<String> hardRiddles = getFileData("data/HardRiddles");
-    private static final ArrayList<String> funFacts = getFileData("data/FunFacts");
+    private static final ArrayList<String> bBallQuestions = getFileData("data/BBallQuestions.txt");
+    private static final ArrayList<String> soccerQuestions = getFileData("data/SoccerQuestions.txt");
+    private static final ArrayList<String> catQuestions = getFileData("data/CatQuestions.txt");
+    private static final ArrayList<String> dogQuestions = getFileData("data/DogQuestions.txt");
+    private static final ArrayList<String> easyRiddles = getFileData("data/EasyRiddles.txt");
+    private static final ArrayList<String> medRiddles = getFileData("data/MediumRiddles.txt");
+    private static final ArrayList<String> hardRiddles = getFileData("data/HardRiddles.txt");
+    private static final ArrayList<String> funFacts = getFileData("data/FunFacts.txt");
 
 
     /**
