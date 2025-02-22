@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Player {
     private static int score;
     private static int totalAnswers;
-    private static final ArrayList<String> scoreBoard = getFileData("src/scoreboard");
+    private static final ArrayList<String> scoreBoard = getFileData("data/scoreboard");
 
     /**
      * The getFileData method uses the fileName parameter to convert a file into an ArrayList.
