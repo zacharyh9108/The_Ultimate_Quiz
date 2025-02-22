@@ -1,0 +1,20 @@
+How many legs do ants have?:
+6
+How many arms does a starfish have?:
+5
+How many months have 28 days?:
+12
+How many eyes does a fly have?:
+2
+How many horns does a rhino have?:
+2
+How many legs does a crab have?:
+10
+How many teeth does an adult human usually have?:
+32
+What's the only vegetable that makes people cry?:
+onion
+What is a group of flamingos is called a...:
+flamboyance
+A baby kangaroo is called a...:
+joey
