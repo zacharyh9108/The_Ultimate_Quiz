@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         boolean exitLoop = false;
@@ -135,8 +136,8 @@ public class Main {
             try (FileWriter fw = new FileWriter("src/Scoreboard", true);
                  BufferedWriter bw = new BufferedWriter(fw);
                  PrintWriter out = new PrintWriter(bw)) {
-                out.println(userName); // Write the user's name to the file
-                out.println(score); // Write the user's score to the file
+                 out.println(userName); // Write the user's name to the file
+                 out.println(score); // Write the user's score to the file
             } catch (IOException e) {
                 //
             }
@@ -148,7 +149,7 @@ public class Main {
      * from the given ArrayList.
      * @param questions represents the questions and answers in a ArrayList the user chooses.
      */
-    public static void askQuestions(ArrayList<String> questions) {
+    private static void askQuestions(ArrayList<String> questions) {
         for (int i = 0; i < 10; i+=2) {
             String answer = questions.get(i + 1);
             Scanner s = new Scanner(System.in);
